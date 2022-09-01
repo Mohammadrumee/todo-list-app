@@ -7,15 +7,17 @@
                 
         <tbody>
             <tr *ngFor="let todo of todoList; index as i">
-                <app-todo-item (removeTodoEvent)=removeTodoTask($event) [todoItem] = "todo"></app-todo-item>
+                <app-todo-item 
+                (removeTodoEvent)="removeTodoTask($event)"
+                (completedTodoEvent)="completedTodoTask($event)"
+                 [todoItem]="todo">
+                </app-todo-item>
             </tr>
         </tbody>
     </table>
 
     <br><br>
 
-    <app-todo-form (saveEvent)=addTodoTask($event)></app-todo-form>
-
+    <app-todo-form (saveEvent)="addTodoTask($event)"></app-todo-form>
 
 </div>
-

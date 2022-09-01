@@ -28,19 +28,29 @@ export class TodoListComponent implements OnInit {
     completed: false
   }
 
-  addTodoTask(newTodo: Todo) {
-    this.todoList.push(newTodo);
+  addTodoTask(newTodo: Todo): void {
+    let task = this.todoList.filter(todo => todo.task === newTodo.task);
+    if(task.length === 0){
+      this.todoList.push(newTodo);
+    }
+    
   }
 
-  removeTodoTask(value: string){
-    alert("remove from parent :" + value);
+  removeTodoTask(value: string): void{
+    let task = this.todoList.filter(todo => todo.task === value);
+    if(task !== undefined){
+      const idx = this.todoList.findIndex(todo => todo.task == value);
+      this.todoList.splice(idx, 1);
+    }
 
-    const idx = this.todoList.findIndex(players => {
-      return players.task == value;
+  }
+
+  completedTodoTask(value: string): void{
+    this.todoList.findIndex(todo => {
+      if (todo.task == value) {
+        todo.completed = true;
+      }
     });
-    this.todoList.splice(idx, 1);
-
   }
-
 
 }

@@ -10,6 +10,7 @@ export class TodoItemComponent implements OnInit {
 
   @Input() todoItem: Todo = {task: '', completed: false};
   @Output() removeTodoEvent = new EventEmitter<string>();
+  @Output() completedTodoEvent = new EventEmitter<string>();
 
   constructor() { }
 
@@ -17,11 +18,12 @@ export class TodoItemComponent implements OnInit {
   }
 
   removeTodoItem(value: string){
-
-    alert("item :" + value);
-
     this.removeTodoEvent.emit(value);
+  }
 
+  completedTodoItem(value: string){
+    alert("compelete :" + value);
+    this.completedTodoEvent.emit(value);
 
   }
 

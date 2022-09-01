@@ -1,3 +1,4 @@
 <td>{{ todoItem.task }}</td>
 <td>{{ todoItem.completed }}</td>
+<td><button (click)="completedTodoItem(todoItem.task)">Complete</button>
 <td><button (click)="removeTodoItem(todoItem.task)">X</button></td>

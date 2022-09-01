@@ -10,7 +10,6 @@ export class TodoFormComponent implements OnInit {
 
   @Output() saveEvent = new EventEmitter<Todo>();
 
-
   constructor() { }
 
   ngOnInit(): void {
@@ -24,10 +23,11 @@ export class TodoFormComponent implements OnInit {
   todo:Todo = { ...this.newTodo};
 
   addTask(): void {
-    alert("child calling..");
-
-    this.saveEvent.emit(this.newTodo);
-    this.newTodo = { ...this.todo};
+    if(this.newTodo.task.length > 0) {
+      this.saveEvent.emit(this.newTodo);
+      this.newTodo = { ...this.todo};
+    }else{
+      alert("Please enter the task!");
+    }
  }
-
 }
