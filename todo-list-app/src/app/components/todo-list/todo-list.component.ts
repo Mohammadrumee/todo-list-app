@@ -32,6 +32,8 @@ export class TodoListComponent implements OnInit {
     let task = this.todoList.filter(todo => todo.task === newTodo.task);
     if(task.length === 0){
       this.todoList.push(newTodo);
+    }else {
+      alert("Task already added!");
     }
     
   }

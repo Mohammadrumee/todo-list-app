@@ -12,6 +12,8 @@ export class TodoItemComponent implements OnInit {
   @Output() removeTodoEvent = new EventEmitter<string>();
   @Output() completedTodoEvent = new EventEmitter<string>();
 
+  displayEdit: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
