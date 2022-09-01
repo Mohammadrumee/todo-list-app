@@ -1,6 +1,7 @@
-<form (ngSubmit)="addTask()">
+<form class="formTab" (ngSubmit)="addTask()">
     <label for="name">Enter a new Task : </label>
+    <br>
     <input class="form-control" name="task" [(ngModel)]="newTodo.task" placeholder="Add your to-do">
     <input class="form-control" name="completed" [(ngModel)]="newTodo.completed" hidden="true">
-    <button type="submit">Submit</button>
+    <button type="submit">Add</button>
 </form>

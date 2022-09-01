@@ -1,9 +1,9 @@
 
-<td [ngClass]="todoItem.completed ? 'completed' : 'incomplete'">
+<td class="itemTask" [ngClass]="todoItem.completed ? 'completed' : 'incomplete'">
     {{ todoItem.task }}
 </td>
 
-<td *ngIf="todoItem.completed == false">
+<td class="itemButton" *ngIf="todoItem.completed == false">
     <button (click)="completedTodoItem(todoItem.task)">Complete</button>
 </td>
     

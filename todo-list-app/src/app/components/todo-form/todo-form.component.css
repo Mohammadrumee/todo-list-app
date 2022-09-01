@@ -1,0 +1,23 @@
+.formTab {
+    margin: auto;
+    align-content: center;
+    /* background-color: aquamarine; */
+    text-align: left;
+    width: 200px;
+}
+
+
+label {
+    text-align: left;
+    position: relative;
+    margin-bottom: 20px;
+    background-color: #ff5858;
+}
+
+button {
+    text-align: center;
+    background-color: #ff5858;
+    position: relative;
+    width: 200px;
+    height: 30px;
+}

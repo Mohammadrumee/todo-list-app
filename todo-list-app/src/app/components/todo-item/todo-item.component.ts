@@ -24,7 +24,6 @@ export class TodoItemComponent implements OnInit {
   }
 
   completedTodoItem(value: string){
-    alert("compelete :" + value);
     this.completedTodoEvent.emit(value);
 
   }

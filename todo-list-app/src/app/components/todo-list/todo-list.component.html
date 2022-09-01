@@ -1,23 +1,33 @@
-<div id="AlertDiv">
+<div class="todo-list">
 
     <h1>{{ title }}</h1>
     <p>A place to store your todos</p>
 
-    <table>
+    <table class="listTable">
+
+        <div *ngIf="todoList.length > 0; then thenBlock else elseBlock"></div>
+
+        
                 
-        <tbody>
-            <tr *ngFor="let todo of todoList; index as i">
-                <app-todo-item 
-                (removeTodoEvent)="removeTodoTask($event)"
-                (completedTodoEvent)="completedTodoTask($event)"
-                 [todoItem]="todo">
-                </app-todo-item>
-            </tr>
-        </tbody>
+        <ng-template #thenBlock>
+            <tbody *ngIf="todoList.length > 0">
+                <tr *ngFor="let todo of todoList; index as i" >
+                    <app-todo-item 
+                    (removeTodoEvent)="removeTodoTask($event)"
+                    (completedTodoEvent)="completedTodoTask($event)"
+                    [todoItem]="todo">
+                    </app-todo-item>
+                </tr>
+            </tbody>
+        </ng-template>
+
+        <ng-template #elseBlock><p><b>Congratulations your task list is empty!!!</b></p></ng-template>
     </table>
 
     <br><br>
 
-    <app-todo-form (saveEvent)="addTodoTask($event)"></app-todo-form>
+    <div class="addItemBox">
+        <app-todo-form (saveEvent)="addTodoTask($event)"></app-todo-form>
+    </div>
 
 </div>

@@ -2,4 +2,16 @@
     text-decoration: line-through;
     background-color: #fbb;
     color: #555; 
+    text-align: center;
+}
+
+td.itemButton{
+    text-align: center;
+    margin-left: 500px;
+}
+
+td.itemTask{
+
+    text-align: center;
+    margin-right: 300px;
 }
