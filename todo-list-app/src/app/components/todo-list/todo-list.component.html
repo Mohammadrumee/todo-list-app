@@ -1,0 +1,21 @@
+<div id="AlertDiv">
+
+    <h1>{{ title }}</h1>
+    <p>A place to store your todos</p>
+
+    <table>
+                
+        <tbody>
+            <tr *ngFor="let todo of todoList; index as i">
+                <app-todo-item (removeTodoEvent)=removeTodoTask($event) [todoItem] = "todo"></app-todo-item>
+            </tr>
+        </tbody>
+    </table>
+
+    <br><br>
+
+    <app-todo-form (saveEvent)=addTodoTask($event)></app-todo-form>
+
+
+</div>
+
